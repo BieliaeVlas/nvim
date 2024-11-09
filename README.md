@@ -1,11 +1,12 @@
-# This is a custom version of NVim + NVChad configured for 🦀Rust.
+# This is a custom version of nvim + nvchad configured for 🦀Rust.
 
 ## Description:
-This repository contains my personal configuration files for nvim. 
+This repository contains my personal configuration files for nvim.
+
 The setup includes:
 - personalized themes; 
 - plugins;
-- key bindings;
+- custom key bindings;
 
 
 ## Installation Instructions:
