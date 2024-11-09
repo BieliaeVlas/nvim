@@ -1,4 +1,4 @@
-# This is my personal configured Nvim + NvChad I use at work.
+# This is my personal configured Nvim + NvChad.
 This repository contains my personal configuration files for nvim:
 - personalized themes; 
 - plugins;
