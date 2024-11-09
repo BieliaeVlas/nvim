@@ -1,4 +1,4 @@
-# This is a custom version of nvim + nvchad configured for 🦀Rust.
+# This is my personal configured Nvim + NvChad I use at work.
 
 ## Description:
 This repository contains my personal configuration files for nvim.
