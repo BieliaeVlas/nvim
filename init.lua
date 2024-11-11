@@ -32,9 +32,23 @@ dofile(vim.g.base46_cache .. "statusline")
 require "options"
 require "nvchad.autocmds"
 
+vim.api.nvim_set_keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<Leader>cd', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+
+require('telescope').setup{
+  defaults = {
+    file_ignore_patterns = {
+      "node_modules",
+      ".idea",
+      "target",
+      ".vscode"
+    }
+  }
+}
+
 vim.schedule(function()
   require "mappings"
 end)
 
-vim.api.nvim_set_keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
 
