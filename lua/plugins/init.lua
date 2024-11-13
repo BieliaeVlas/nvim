@@ -35,15 +35,13 @@ return {
       }
     end
   },
-
-  -- {
-    -- 'rust-lang/rust.vim',
-    -- ft = "rust",
-    -- init = function ()
-      -- vim.g.rustfmt_autosave = 1
-    -- end
-  -- },
-
+  {
+    'rust-lang/rust.vim',
+    ft = "rust",
+    init = function ()
+      vim.g.rustfmt_autosave = 1
+    end
+  },
   {
     'mfussenegger/nvim-dap',
     config = function()
@@ -320,5 +318,16 @@ return {
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
     },
+  },
+  {
+    "rachartier/tiny-code-action.nvim",
+    dependencies = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-telescope/telescope.nvim"},
+    },
+    event = "LspAttach",
+    config = function()
+        require('tiny-code-action').setup()
+    end
   },
 }
