@@ -33,9 +33,21 @@ require "options"
 require "nvchad.autocmds"
 
 vim.keymap.set("n", "<leader>ca", function()
-	require("tiny-code-action").code_action()
+  require("tiny-code-action").code_action()
 end, { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>cd', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>cd', function ()
+  vim.cmd.RustLsp({ 'renderDiagnostic', 'current' })
+end, { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>ce', function ()
+  vim.cmd.RustLsp({'explainError', 'current'})
+end, { noremap = true, silent = true})
+vim.keymap.set("n", "<leader>a", function()
+  vim.cmd.RustLsp({ 'hover', 'actions' })
+end, {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<Leader>s', ':silent !nohup cargo fix --allow-dirty<CR>', { noremap = true, silent = true, desc = "Clean extra imports and save"})
+vim.api.nvim_set_keymap('n', '<Leader>rr', ':RustLsp run<CR>', { noremap = true, silent = true, desc = "Cargo run"})
+
 
 require('telescope').setup{
   defaults = {
